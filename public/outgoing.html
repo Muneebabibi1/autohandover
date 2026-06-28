@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log Handover — AutoHandover</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="nav-brand" href="/"><div class="logo">AH</div><span>Auto<em>Handover</em></span></a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/outgoing" class="active">Log Handover</a>
+      <a href="/incoming">Incoming Report</a>
+      <a href="/history">History</a>
+    </div>
+    <div class="nav-badge">Outgoing</div>
+  </nav>
+
+  <div class="page">
+    <div class="page-header">
+      <h2>👷 Outgoing Supervisor — Log Shift Handover</h2>
+      <p>Review WMS status, open tickets, log your notes, and generate an AI handover summary.</p>
+      <span class="shift-badge" id="shift-info">Loading shift info...</span>
+    </div>
+
+    <!-- Steps -->
+    <div class="steps">
+      <div class="step active" id="step1">
+        <div class="step-num">1</div>
+        <div class="step-label">WMS Status</div>
+      </div>
+      <div class="step-sep"></div>
+      <div class="step" id="step2">
+        <div class="step-num">2</div>
+        <div class="step-label">Open Tickets</div>
+      </div>
+      <div class="step-sep"></div>
+      <div class="step" id="step3">
+        <div class="step-num">3</div>
+        <div class="step-label">Log Notes</div>
+      </div>
+      <div class="step-sep"></div>
+      <div class="step" id="step4">
+        <div class="step-num">4</div>
+        <div class="step-label">AI Summary</div>
+      </div>
+    </div>
+
+    <!-- SECTION 1: WMS Status -->
+    <div id="section-wms">
+      <div class="grid-3" id="wms-stats" style="margin-bottom:1.2rem">
+        <div class="stat-card"><div class="stat-icon">📦</div><div><div class="stat-val" id="orders-pending">—</div><div class="stat-label">Orders Pending</div></div></div>
+        <div class="stat-card"><div class="stat-icon">✅</div><div><div class="stat-val" id="orders-done">—</div><div class="stat-label">Completed Today</div></div></div>
+        <div class="stat-card"><div class="stat-icon">🎯</div><div><div class="stat-val" id="pick-acc">—</div><div class="stat-label">Pick Accuracy</div></div></div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:1.2rem">
+        <div class="card">
+          <div class="card-header">📦 Active Orders</div>
+          <div class="card-body">
+            <table>
+              <thead><tr><th>Order ID</th><th>Customer</th><th>Status</th><th>Priority</th><th>Progress</th></tr></thead>
+              <tbody id="orders-table"><tr><td colspan="5" class="loading">Loading...</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header amber">⚠️ WMS Alerts</div>
+          <div class="card-body" id="wms-alerts"><div class="loading"><div class="spinner"></div>Loading alerts...</div></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:1.2rem">
+        <div class="card-header teal">🔧 Equipment Status</div>
+        <div class="card-body">
+          <table>
+            <thead><tr><th>ID</th><th>Type</th><th>Status</th><th>Location</th></tr></thead>
+            <tbody id="equip-table"><tr><td colspan="4">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" onclick="goToTickets()">Next: Review Open Tickets →</button>
+    </div>
+
+    <!-- SECTION 2: Open Tickets -->
+    <div id="section-tickets" style="display:none">
+      <div class="card" style="margin-bottom:1.2rem">
+        <div class="card-header">🎫 Open IT Tickets (osTicket)</div>
+        <div class="card-body" id="tickets-list"><div class="loading"><div class="spinner"></div>Loading tickets...</div></div>
+      </div>
+      <div style="display:flex;gap:1rem">
+        <button class="btn btn-outline" onclick="goToSection('wms')">← Back</button>
+        <button class="btn btn-primary" onclick="goToNotes()">Next: Log Your Notes →</button>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Handover Notes Form -->
+    <div id="section-notes" style="display:none">
+      <div class="card" style="margin-bottom:1.2rem">
+        <div class="card-header">📝 Handover Notes</div>
+        <div class="card-body">
+          <div class="grid-2">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="supervisor-name" placeholder="e.g. Muneeba Khan" required>
+            </div>
+            <div class="form-group">
+              <label>Shift</label>
+              <select id="shift-type">
+                <option>Day Shift (6am – 2pm)</option>
+                <option>Afternoon Shift (2pm – 10pm)</option>
+                <option>Night Shift (10pm – 6am)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Shift Summary Notes</label>
+            <textarea id="shift-notes" placeholder="Summarize what happened this shift — key activities, completed work, anything the incoming supervisor should know..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Open Issues / Action Items</label>
+            <textarea id="open-issues" placeholder="List any open issues, pending tasks, or items that need follow-up by the incoming team..." style="min-height:70px"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Priority Level for Handover</label>
+            <select id="priority">
+              <option value="Normal">Normal — Routine handover</option>
+              <option value="Elevated">Elevated — Multiple open items</option>
+              <option value="Critical">Critical — Urgent issues require immediate attention</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:1rem">
+        <button class="btn btn-outline" onclick="goToSection('tickets')">← Back</button>
+        <button class="btn btn-amber" onclick="generateSummary()" id="gen-btn">🤖 Generate AI Summary →</button>
+      </div>
+    </div>
+
+    <!-- SECTION 4: AI Summary -->
+    <div id="section-summary" style="display:none">
+      <div id="loading-summary" class="loading" style="display:none">
+        <div class="spinner"></div>
+        <p>AutoHandover AI is generating your shift summary...</p>
+      </div>
+      <div id="summary-content" style="display:none">
+        <div class="success-banner">
+          <h3>✅ Handover Logged Successfully</h3>
+          <p>AI summary generated. The incoming supervisor has been notified.</p>
+        </div>
+        <div class="card" style="margin-bottom:1.2rem">
+          <div class="card-header">🤖 AI-Generated Handover Summary</div>
+          <div class="card-body">
+            <div class="ai-label"><span>⚡ AutoHandover AI Summary</span></div>
+            <div class="ai-summary" id="ai-summary-text"></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="/incoming" class="btn btn-green">📋 View Incoming Report</a>
+          <a href="/" class="btn btn-outline">← Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer"><span>AutoHandover</span> — IST 440W Capstone | Muneeba Khan | Penn State 2026</footer>
+  <script src="/js/outgoing.js"></script>
+</body>
+</html>

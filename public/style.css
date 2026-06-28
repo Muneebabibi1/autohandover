@@ -1,0 +1,247 @@
+/* ============================================================
+   AutoHandover – Stylesheet
+   IST 440W Capstone – Muneeba Khan
+   ============================================================ */
+
+:root {
+  --primary:   #1e40af;
+  --danger:    #dc2626;
+  --success:   #16a34a;
+  --it-color:  #7c3aed;
+  --warn:      #d97706;
+  --bg:        #f1f5f9;
+  --card-bg:   #ffffff;
+  --text:      #1e293b;
+  --muted:     #64748b;
+  --border:    #e2e8f0;
+  --radius:    10px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+header {
+  background: var(--primary);
+  color: white;
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.logo { font-size: 1.3rem; font-weight: 700; margin-right: 12px; }
+.subtitle { font-size: 0.85rem; opacity: 0.8; }
+.time-badge {
+  background: rgba(255,255,255,0.15);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ── Main Layout ── */
+main { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+
+/* ── Shift Banner ── */
+.shift-banner {
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.incoming-banner { background: #0f766e; }
+.shift-label { font-size: 1.1rem; font-weight: 700; display: block; margin-bottom: 4px; }
+.shift-supervisor { font-size: 0.85rem; opacity: 0.85; }
+
+/* ── KPI Grid ── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.mini-kpi { grid-template-columns: repeat(3, 1fr); margin-top: 16px; }
+
+.kpi-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  text-align: center;
+}
+.kpi-card.kpi-alert { border-left: 4px solid var(--danger); }
+.kpi-card.kpi-it    { border-left: 4px solid var(--it-color); }
+.kpi-label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+.kpi-value { font-size: 2rem; font-weight: 800; color: var(--text); }
+.kpi-sub   { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+
+/* ── Cards ── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+.card h2 { font-size: 1rem; font-weight: 700; margin-bottom: 14px; color: var(--text); }
+
+/* ── Table ── */
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+thead { background: var(--bg); }
+th { text-align: left; padding: 10px 12px; font-weight: 600; color: var(--muted); font-size: 0.78rem; text-transform: uppercase; }
+td { padding: 10px 12px; border-top: 1px solid var(--border); }
+tr:hover td { background: #f8fafc; }
+
+/* ── Type Badges ── */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge-it   { background: #ede9fe; color: var(--it-color); }
+.badge-ops  { background: #fef3c7; color: var(--warn); }
+.badge-pending  { background: #fef3c7; color: var(--warn); }
+.badge-done     { background: #dcfce7; color: var(--success); }
+
+/* ── Alert / Handover Lists ── */
+.alert-list, .handover-list { list-style: none; }
+.alert-list li, .handover-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.alert-list li:last-child, .handover-list li:last-child { border-bottom: none; }
+.handover-list a { color: var(--primary); text-decoration: none; font-weight: 600; }
+.handover-list a:hover { text-decoration: underline; }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+.btn:hover { opacity: 0.85; }
+.btn-danger   { background: var(--danger);   color: white; }
+.btn-primary  { background: var(--primary);  color: white; }
+.btn-it       { background: var(--it-color); color: white; font-size: 0.8rem; padding: 7px 14px; }
+.btn-success  { background: var(--success);  color: white; }
+.btn-secondary { background: var(--border);  color: var(--text); }
+.btn-ack      { background: #dcfce7; color: var(--success); font-size: 0.8rem; padding: 7px 14px; }
+.btn-large    { width: 100%; padding: 16px; font-size: 1rem; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Task Cards ── */
+.task-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fff;
+}
+.task-card.priority-it   { border-left: 4px solid var(--it-color); }
+.task-card.priority-ops  { border-left: 4px solid var(--warn); }
+.task-card.is-acknowledged { opacity: 0.5; background: #f8fafc; }
+
+.task-body { flex: 1; }
+.task-desc { font-size: 0.92rem; font-weight: 600; margin-bottom: 4px; }
+.task-meta { font-size: 0.78rem; color: var(--muted); }
+.task-actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+
+.ticket-badge {
+  display: inline-block;
+  background: #ede9fe;
+  color: var(--it-color);
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ── Supervisor Input ── */
+.supervisor-input-row { display: flex; gap: 12px; align-items: center; }
+.supervisor-input-row input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.92rem;
+  outline: none;
+}
+.supervisor-input-row input:focus { border-color: var(--primary); }
+
+/* ── Summary Card ── */
+.summary-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: #f0f9ff;
+  border-left: 4px solid var(--primary);
+  padding: 14px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 0;
+}
+
+/* ── Ack Status ── */
+.ack-status { }
+.ack-all-section { text-align: center; }
+.ack-confirm { margin-top: 14px; color: var(--success); font-weight: 700; font-size: 1rem; }
+
+.helper-text { font-size: 0.85rem; color: var(--muted); margin-bottom: 14px; }
+
+/* ── Modal ── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100;
+}
+.modal {
+  background: white;
+  border-radius: var(--radius);
+  padding: 36px 40px;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+}
+.modal h2 { margin-bottom: 12px; }
+.modal p  { color: var(--muted); margin-bottom: 20px; font-size: 0.9rem; line-height: 1.6; }
+.modal .btn { margin: 6px; }
+.modal-spinner { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+
+.spinner {
+  width: 48px; height: 48px;
+  border: 5px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.hidden { display: none !important; }

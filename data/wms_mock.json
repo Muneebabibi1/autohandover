@@ -1,0 +1,31 @@
+{
+  "shift_date": "2026-06-27",
+  "facility": "Penn State Distribution Center - Warehouse A",
+  "wms_system": "Softeon WMS v8.2",
+  "active_orders": [
+    { "order_id": "ORD-20240115", "status": "Picking", "priority": "High", "customer": "Amazon FBA", "items": 48, "completion": 75 },
+    { "order_id": "ORD-20240116", "status": "Packing", "priority": "Normal", "customer": "Walmart B2B", "items": 120, "completion": 90 },
+    { "order_id": "ORD-20240117", "status": "Pending Pick", "priority": "Rush", "customer": "Target Express", "items": 22, "completion": 0 },
+    { "order_id": "ORD-20240118", "status": "Staged", "priority": "Normal", "customer": "Home Depot", "items": 65, "completion": 100 }
+  ],
+  "alerts": [
+    { "id": "WMS-ALT-001", "severity": "High", "message": "Zone B conveyor belt running at 60% speed - maintenance notified", "time": "14:32" },
+    { "id": "WMS-ALT-002", "severity": "Medium", "message": "Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered", "time": "15:10" },
+    { "id": "WMS-ALT-003", "severity": "Low", "message": "Label printer LP-03 requires paper refill", "time": "15:45" }
+  ],
+  "metrics": {
+    "orders_completed_today": 34,
+    "orders_pending": 8,
+    "pick_accuracy": "98.2%",
+    "avg_pick_time_min": 4.7,
+    "dock_doors_active": 6,
+    "dock_doors_total": 10
+  },
+  "equipment": [
+    { "id": "FL-01", "type": "Forklift", "status": "In Use", "location": "Zone C" },
+    { "id": "FL-02", "type": "Forklift", "status": "Available", "location": "Charging Bay" },
+    { "id": "PP-01", "type": "Pallet Jack", "status": "In Use", "location": "Zone A" },
+    { "id": "CB-01", "type": "Conveyor Belt A", "status": "Running", "location": "Main Line" },
+    { "id": "CB-02", "type": "Conveyor Belt B", "status": "Degraded", "location": "Zone B" }
+  ]
+}

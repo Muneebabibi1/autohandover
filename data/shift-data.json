@@ -1,0 +1,94 @@
+{
+  "shift": {
+    "id": "SH-2024-0606-2",
+    "label": "Afternoon Shift",
+    "start": "14:00",
+    "end": "22:00",
+    "date": "2024-06-06",
+    "supervisor": "James Ortega"
+  },
+  "metrics": {
+    "orders_completed": 142,
+    "orders_target": 180,
+    "pick_rate_actual": 78,
+    "pick_rate_target": 92,
+    "units_picked": 3840,
+    "dock_doors_used": 6,
+    "dock_doors_total": 8
+  },
+  "open_orders": [
+    {
+      "order_id": "ORD-88421",
+      "zone": "Zone B",
+      "status": "Stuck - Awaiting Putaway",
+      "age_minutes": 97,
+      "sla_deadline": "23:00",
+      "type": "operations"
+    },
+    {
+      "order_id": "ORD-88435",
+      "zone": "Zone C",
+      "status": "Stuck - WMS sync failure",
+      "age_minutes": 45,
+      "sla_deadline": "22:30",
+      "type": "it"
+    },
+    {
+      "order_id": "ORD-88447",
+      "zone": "Zone A",
+      "status": "Pending - Label printer offline",
+      "age_minutes": 20,
+      "sla_deadline": "23:30",
+      "type": "it"
+    }
+  ],
+  "exceptions": [
+    {
+      "id": "EX-001",
+      "description": "WMS not syncing with conveyor system in Zone C",
+      "zone": "Zone C",
+      "started": "19:15",
+      "type": "it",
+      "keywords": ["WMS", "sync", "conveyor"]
+    },
+    {
+      "id": "EX-002",
+      "description": "RF scanner #7 disconnecting intermittently",
+      "zone": "Zone B",
+      "started": "20:30",
+      "type": "it",
+      "keywords": ["scanner", "offline", "RF"]
+    },
+    {
+      "id": "EX-003",
+      "description": "Label printer in Zone A went offline – 3 orders delayed",
+      "zone": "Zone A",
+      "started": "21:00",
+      "type": "it",
+      "keywords": ["printer", "offline"]
+    },
+    {
+      "id": "EX-004",
+      "description": "Short-staffed in Zone D – 2 pickers called out",
+      "zone": "Zone D",
+      "started": "14:30",
+      "type": "operations",
+      "keywords": []
+    }
+  ],
+  "equipment_alerts": [
+    {
+      "id": "EQ-001",
+      "equipment": "Forklift #3",
+      "alert": "Battery at 12% – needs charging before next shift",
+      "type": "operations"
+    },
+    {
+      "id": "EQ-002",
+      "equipment": "Conveyor Belt – Zone C",
+      "alert": "API timeout errors since 19:00 – not communicating with WMS",
+      "type": "it"
+    }
+  ],
+  "it_issues_summary": "3 IT-related exceptions detected: WMS sync failure (Zone C), RF scanner disconnect (Zone B), label printer offline (Zone A). These require IT team action before or at start of next shift."
+}

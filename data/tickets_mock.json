@@ -1,0 +1,48 @@
+{
+  "tickets": [
+    {
+      "id": "TKT-1042",
+      "subject": "Conveyor Belt B speed issue - Zone B",
+      "status": "Open",
+      "priority": "High",
+      "created": "2026-06-27 14:30",
+      "assigned_to": "IT Support - John M.",
+      "department": "Facilities",
+      "description": "Zone B conveyor belt running at 60% capacity. Motor sensor showing fault code E-14. Maintenance team notified but parts needed.",
+      "last_update": "2026-06-27 15:00"
+    },
+    {
+      "id": "TKT-1039",
+      "subject": "WMS login timeout - Shift supervisor terminals",
+      "status": "In Progress",
+      "priority": "Medium",
+      "created": "2026-06-27 11:15",
+      "assigned_to": "IT Support - Muneeba K.",
+      "department": "IT",
+      "description": "Supervisor terminals timing out after 5 minutes instead of 30 minutes. Session config updated in Softeon admin panel - pending verification.",
+      "last_update": "2026-06-27 13:45"
+    },
+    {
+      "id": "TKT-1035",
+      "subject": "Label printer LP-03 intermittent paper jam",
+      "status": "Open",
+      "priority": "Low",
+      "created": "2026-06-26 16:00",
+      "assigned_to": "Unassigned",
+      "department": "Operations",
+      "description": "LP-03 jamming every 50-60 labels. Printer cleaned but issue persists. May need roller replacement.",
+      "last_update": "2026-06-26 16:00"
+    },
+    {
+      "id": "TKT-1028",
+      "subject": "RF Scanner RF-07 not connecting to WMS",
+      "status": "Resolved",
+      "priority": "High",
+      "created": "2026-06-26 08:00",
+      "assigned_to": "IT Support - Muneeba K.",
+      "department": "IT",
+      "description": "RF-07 unable to authenticate to Softeon WMS. Root cause: expired certificate. Certificate renewed and scanner reconfigured.",
+      "last_update": "2026-06-27 09:30"
+    }
+  ]
+}

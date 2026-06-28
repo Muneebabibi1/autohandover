@@ -1,0 +1,10 @@
+{
+  "name": "autohandover",
+  "version": "1.0.0",
+  "description": "Smart AI-Powered Shift Handover System for Warehouse Management",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "author": "Muneeba Khan - IST 440W Penn State",
+  "license": "MIT",
+  "engines": { "node": ">=18.0.0" }
+}

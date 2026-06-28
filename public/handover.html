@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoHandover – Incoming Shift Briefing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="handover-page">
+
+  <header>
+    <div class="header-left">
+      <span class="logo">⚡ AutoHandover</span>
+      <span class="subtitle">Incoming Shift Briefing</span>
+    </div>
+    <div class="header-right">
+      <a href="/" class="btn btn-secondary">← Back to Dashboard</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Handover Header -->
+    <section class="shift-banner incoming-banner">
+      <div>
+        <span class="shift-label" id="ho-shift-label">Loading…</span>
+        <span class="shift-supervisor">Handed over by: <strong id="ho-supervisor">—</strong></span>
+      </div>
+      <div class="ack-status" id="ack-status-badge">
+        <span class="badge badge-pending">⏳ Pending full acknowledgment</span>
+      </div>
+    </section>
+
+    <!-- AI Summary -->
+    <section class="card summary-card">
+      <h2>📋 Shift Summary</h2>
+      <p id="ho-summary" class="summary-text">Loading…</p>
+      <div class="kpi-grid mini-kpi">
+        <div class="kpi-card">
+          <div class="kpi-label">Orders Done</div>
+          <div class="kpi-value" id="ho-orders">—</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Pick Rate</div>
+          <div class="kpi-value" id="ho-pick">—</div>
+        </div>
+        <div class="kpi-card kpi-alert">
+          <div class="kpi-label">Open Orders</div>
+          <div class="kpi-value" id="ho-open">—</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supervisor Name Input -->
+    <section class="card">
+      <h2>👤 Incoming Supervisor</h2>
+      <div class="supervisor-input-row">
+        <input type="text" id="incoming-supervisor-name" placeholder="Enter your name to acknowledge tasks" />
+      </div>
+    </section>
+
+    <!-- Priority Task List -->
+    <section class="card">
+      <h2>🚨 Priority Task List</h2>
+      <p class="helper-text">Review and acknowledge each item. IT issues can be sent directly to the IT support desk.</p>
+      <div id="task-list"></div>
+    </section>
+
+    <!-- Acknowledge All -->
+    <section class="card ack-all-section">
+      <button class="btn btn-success btn-large" id="ack-all-btn" onclick="acknowledgeAll()">
+        ✅ I have reviewed and acknowledged all items
+      </button>
+      <p id="ack-all-msg" class="ack-confirm hidden">
+        ✅ All items acknowledged. Shift officially handed over.
+      </p>
+    </section>
+
+  </main>
+
+  <script src="handover.js"></script>
+</body>
+</html>

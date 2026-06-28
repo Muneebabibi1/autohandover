@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoHandover — Smart Shift Handover System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="nav-brand" href="/">
+      <div class="logo">AH</div>
+      <span>Auto<em>Handover</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="active">Home</a>
+      <a href="/outgoing">Log Handover</a>
+      <a href="/incoming">Incoming Report</a>
+      <a href="/history">History</a>
+    </div>
+    <div class="nav-badge">v1.0</div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Auto<span>Handover</span></h1>
+      <p>Smart AI-powered shift handover for warehouse management. Connect WMS data, IT tickets, and AI summaries in one seamless workflow.</p>
+
+      <div class="role-cards">
+        <a href="/outgoing" class="role-card">
+          <div class="icon">👷</div>
+          <h3>Outgoing Supervisor</h3>
+          <p>Log shift status, open issues, and generate AI handover summary</p>
+        </a>
+        <a href="/incoming" class="role-card">
+          <div class="icon">📋</div>
+          <h3>Incoming Supervisor</h3>
+          <p>View the latest handover report, WMS status, and open IT tickets</p>
+        </a>
+        <a href="/history" class="role-card">
+          <div class="icon">📁</div>
+          <h3>Handover History</h3>
+          <p>Browse all past handover reports with audit trail</p>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="num" id="stat-handovers">—</div>
+          <div class="label">Handovers Logged</div>
+        </div>
+        <div class="stat">
+          <div class="num">&lt;60s</div>
+          <div class="label">Avg. Review Time</div>
+        </div>
+        <div class="stat">
+          <div class="num">100%</div>
+          <div class="label">Audit Coverage</div>
+        </div>
+        <div class="stat">
+          <div class="num">AI</div>
+          <div class="label">GPT-3.5 Powered</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span>AutoHandover</span> — IST 440W Capstone Project &nbsp;|&nbsp; Muneeba Khan &nbsp;|&nbsp; Penn State University &nbsp;|&nbsp; 2026
+  </footer>
+
+  <script>
+    fetch('/api/handover').then(r=>r.json()).then(d=>{
+      document.getElementById('stat-handovers').textContent = d.handovers ? d.handovers.length : 0;
+    }).catch(()=>{});
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incoming Report — AutoHandover</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="nav-brand" href="/"><div class="logo">AH</div><span>Auto<em>Handover</em></span></a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/outgoing">Log Handover</a>
+      <a href="/incoming" class="active">Incoming Report</a>
+      <a href="/history">History</a>
+    </div>
+    <div class="nav-badge">Incoming</div>
+  </nav>
+
+  <div class="page">
+    <div class="page-header">
+      <h2>📋 Incoming Supervisor — Shift Handover Report</h2>
+      <p>Review your AI-generated handover summary, live WMS status, and open IT tickets.</p>
+    </div>
+
+    <div id="no-handover" style="display:none" class="card">
+      <div class="card-body" style="text-align:center;padding:3rem">
+        <div style="font-size:3rem;margin-bottom:1rem">📭</div>
+        <h3 style="color:var(--navy);margin-bottom:.5rem">No Handover Found</h3>
+        <p style="color:var(--dgray);margin-bottom:1.5rem">No outgoing supervisor has logged a handover yet for this shift.</p>
+        <a href="/outgoing" class="btn btn-primary">Log a Handover →</a>
+      </div>
+    </div>
+
+    <div id="report-content" style="display:none">
+
+      <!-- Meta banner -->
+      <div class="card" style="margin-bottom:1.2rem;background:var(--navy)">
+        <div class="card-body" style="display:flex;gap:2rem;flex-wrap:wrap;align-items:center">
+          <div>
+            <div style="font-size:.8rem;color:var(--ice)">Outgoing Supervisor</div>
+            <div style="font-size:1.1rem;font-weight:700;color:var(--white)" id="out-supervisor">—</div>
+          </div>
+          <div>
+            <div style="font-size:.8rem;color:var(--ice)">Shift</div>
+            <div style="font-size:1.1rem;font-weight:700;color:var(--amber)" id="out-shift">—</div>
+          </div>
+          <div>
+            <div style="font-size:.8rem;color:var(--ice)">Logged At</div>
+            <div style="font-size:1rem;font-weight:600;color:var(--white)" id="out-time">—</div>
+          </div>
+          <div>
+            <div style="font-size:.8rem;color:var(--ice)">Priority</div>
+            <div style="font-size:1rem;font-weight:700" id="out-priority">—</div>
+          </div>
+          <div style="margin-left:auto" id="ack-section">
+            <button class="btn btn-amber" id="ack-btn" onclick="acknowledge()">✅ Acknowledge Handover</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Summary -->
+      <div class="card" style="margin-bottom:1.2rem">
+        <div class="card-header">🤖 AI-Generated Shift Summary</div>
+        <div class="card-body">
+          <div class="ai-label"><span>⚡ AutoHandover AI Summary</span></div>
+          <div class="ai-summary" id="ai-summary-text">Loading...</div>
+        </div>
+      </div>
+
+      <!-- WMS + Tickets side by side -->
+      <div class="grid-2" style="margin-bottom:1.2rem">
+        <!-- WMS -->
+        <div>
+          <div class="grid-2" style="margin-bottom:1rem">
+            <div class="stat-card"><div class="stat-icon">📦</div><div><div class="stat-val" id="inc-pending">—</div><div class="stat-label">Orders Pending</div></div></div>
+            <div class="stat-card"><div class="stat-icon">🎯</div><div><div class="stat-val" id="inc-acc">—</div><div class="stat-label">Pick Accuracy</div></div></div>
+          </div>
+          <div class="card">
+            <div class="card-header amber">⚠️ WMS Alerts</div>
+            <div class="card-body" id="inc-wms-alerts"><div class="loading"><div class="spinner"></div></div></div>
+          </div>
+        </div>
+
+        <!-- Tickets -->
+        <div class="card">
+          <div class="card-header">🎫 Open IT Tickets</div>
+          <div class="card-body" id="inc-tickets"><div class="loading"><div class="spinner"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Active Orders -->
+      <div class="card" style="margin-bottom:1.2rem">
+        <div class="card-header teal">📦 Active Orders — Current Status</div>
+        <div class="card-body">
+          <table>
+            <thead><tr><th>Order ID</th><th>Customer</th><th>Status</th><th>Priority</th><th>Progress</th></tr></thead>
+            <tbody id="inc-orders"><tr><td colspan="5">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="/outgoing" class="btn btn-primary">Log New Handover</a>
+        <a href="/history" class="btn btn-outline">View History</a>
+      </div>
+    </div>
+
+    <div id="loading-report" class="loading">
+      <div class="spinner"></div>
+      <p>Loading latest handover report...</p>
+    </div>
+  </div>
+
+  <footer class="footer"><span>AutoHandover</span> — IST 440W Capstone | Muneeba Khan | Penn State 2026</footer>
+  <script src="/js/incoming.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History — AutoHandover</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="nav-brand" href="/"><div class="logo">AH</div><span>Auto<em>Handover</em></span></a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/outgoing">Log Handover</a>
+      <a href="/incoming">Incoming Report</a>
+      <a href="/history" class="active">History</a>
+    </div>
+    <div class="nav-badge">Audit Trail</div>
+  </nav>
+
+  <div class="page">
+    <div class="page-header">
+      <h2>📁 Handover History — Audit Trail</h2>
+      <p>Complete record of all logged shift handovers. Every entry is timestamped and immutable.</p>
+    </div>
+
+    <div id="history-list"><div class="loading"><div class="spinner"></div><p>Loading handover history...</p></div></div>
+  </div>
+
+  <footer class="footer"><span>AutoHandover</span> — IST 440W Capstone | Muneeba Khan | Penn State 2026</footer>
+  <script>
+    fetch('/api/handover').then(r=>r.json()).then(data => {
+      const el = document.getElementById('history-list');
+      if (!data.handovers || data.handovers.length === 0) {
+        el.innerHTML = `<div class="card"><div class="card-body" style="text-align:center;padding:3rem">
+          <div style="font-size:3rem;margin-bottom:1rem">📭</div>
+          <h3 style="color:var(--navy)">No Handovers Yet</h3>
+          <p style="margin:.5rem 0 1.5rem;color:var(--dgray)">No handovers have been logged yet.</p>
+          <a href="/outgoing" class="btn btn-primary">Log First Handover →</a>
+        </div></div>`;
+        return;
+      }
+      el.innerHTML = data.handovers.map(h => `
+        <div class="card" style="margin-bottom:1rem">
+          <div class="card-header" style="justify-content:space-between">
+            <span>👷 ${h.supervisorName || 'Unknown'} — ${h.shiftType || ''}</span>
+            <span class="ts">${new Date(h.timestamp).toLocaleString()}</span>
+          </div>
+          <div class="card-body">
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:.75rem">
+              <span class="badge badge-${(h.priority||'Normal').toLowerCase()}">${h.priority || 'Normal'}</span>
+              ${h.acknowledged ? `<span class="badge badge-resolved">✅ Acknowledged by ${h.acknowledgedBy}</span>` : '<span class="badge badge-open">⏳ Pending Acknowledgment</span>'}
+            </div>
+            <p style="font-size:.9rem;color:var(--dgray);margin-bottom:.5rem"><strong>Notes:</strong> ${h.notes || 'No notes provided.'}</p>
+            <details>
+              <summary style="cursor:pointer;font-size:.85rem;color:var(--teal);font-weight:600">View AI Summary</summary>
+              <div class="ai-summary" style="margin-top:.75rem;font-size:.82rem">${h.aiSummary || 'No summary available.'}</div>
+            </details>
+          </div>
+        </div>`).join('');
+    }).catch(() => {
+      document.getElementById('history-list').innerHTML = '<p style="color:red;padding:1rem">Error loading history.</p>';
+    });
+  </script>
+</body>
+</html>
