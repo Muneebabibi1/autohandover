@@ -18,7 +18,7 @@
       <a href="/incoming">Incoming Report</a>
       <a href="/history">History</a>
     </div>
-    <div class="nav-badge">v1.0</div>
+    <div class="nav-badge">v2.0</div>
   </nav>
 
   <div class="hero">
@@ -44,23 +44,29 @@
         </a>
       </div>
 
+      <!-- ENHANCEMENT #3: Live Dashboard Stats (NEW in v2.0) -->
       <div class="hero-stats">
         <div class="stat">
           <div class="num" id="stat-handovers">—</div>
           <div class="label">Handovers Logged</div>
         </div>
         <div class="stat">
-          <div class="num">&lt;60s</div>
-          <div class="label">Avg. Review Time</div>
+          <div class="num" id="stat-tickets" style="color:#f59e0b">—</div>
+          <div class="label">Open IT Tickets</div>
         </div>
         <div class="stat">
-          <div class="num">100%</div>
-          <div class="label">Audit Coverage</div>
+          <div class="num" id="stat-alerts" style="color:#ef4444">—</div>
+          <div class="label">Active WMS Alerts</div>
         </div>
         <div class="stat">
-          <div class="num">AI</div>
-          <div class="label">GPT-3.5 Powered</div>
+          <div class="num" id="stat-last">—</div>
+          <div class="label">Last Handover</div>
         </div>
+      </div>
+
+      <!-- Live status bar -->
+      <div id="live-status" style="margin-top:1.25rem;padding:.75rem 1.25rem;background:rgba(255,255,255,.12);border-radius:8px;font-size:.85rem;color:rgba(255,255,255,.85);display:none">
+        <span id="status-text">Loading live data...</span>
       </div>
     </div>
   </div>
@@ -70,8 +76,46 @@
   </footer>
 
   <script>
-    fetch('/api/handover').then(r=>r.json()).then(d=>{
-      document.getElementById('stat-handovers').textContent = d.handovers ? d.handovers.length : 0;
+    // ENHANCEMENT #3: Load all live stats in parallel from multiple APIs
+    Promise.all([
+      fetch('/api/handover').then(r=>r.json()),
+      fetch('/api/tickets').then(r=>r.json()),
+      fetch('/api/wms/status').then(r=>r.json())
+    ]).then(([handoverData, ticketData, wmsData]) => {
+      // Total handovers
+      const count = handoverData.handovers ? handoverData.handovers.length : 0;
+      document.getElementById('stat-handovers').textContent = count;
+
+      // Open tickets
+      const tickets = ticketData.data || [];
+      document.getElementById('stat-tickets').textContent = tickets.length;
+
+      // Active WMS alerts
+      const alerts = (wmsData.data && wmsData.data.alerts) ? wmsData.data.alerts.length : 0;
+      document.getElementById('stat-alerts').textContent = alerts;
+
+      // Last handover time
+      if (handoverData.handovers && handoverData.handovers.length > 0) {
+        const last = new Date(handoverData.handovers[0].timestamp);
+        const mins = Math.floor((Date.now() - last) / 60000);
+        document.getElementById('stat-last').textContent = mins < 60 ? `${mins}m ago` : `${Math.floor(mins/60)}h ago`;
+      } else {
+        document.getElementById('stat-last').textContent = 'None';
+      }
+
+      // Status bar
+      const highAlerts = wmsData.data && wmsData.data.alerts ? wmsData.data.alerts.filter(a=>a.severity==='High') : [];
+      const highTickets = tickets.filter(t=>t.priority==='High');
+      const bar = document.getElementById('live-status');
+      bar.style.display = 'block';
+      if (highAlerts.length > 0 || highTickets.length > 0) {
+        document.getElementById('status-text').innerHTML =
+          `⚠️ <strong>ATTENTION:</strong> ${highAlerts.length} high-priority WMS alert(s) and ${highTickets.length} high-priority ticket(s) require attention.`;
+        bar.style.background = 'rgba(239,68,68,.25)';
+      } else {
+        document.getElementById('status-text').innerHTML = `✅ <strong>System Normal</strong> — All systems operational. ${count} handover(s) on record.`;
+        bar.style.background = 'rgba(34,197,94,.2)';
+      }
     }).catch(()=>{});
   </script>
 </body>
