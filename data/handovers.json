@@ -1,1 +1,1016 @@
-[]
+[
+  {
+    "id": "2c346fa9-2c9c-4a65-ae9a-2cf31dc31df7",
+    "timestamp": "2026-07-30T22:00:21.267Z",
+    "supervisorName": "Muneeba khan",
+    "shiftType": "Afternoon Shift (2pm – 10pm)",
+    "notes": "",
+    "openIssues": "",
+    "priority": "Normal",
+    "aiSummary": "AUTOHANDOVER SHIFT SUMMARY — Generated 7/30/2026, 6:00:21 PM\nOutgoing Supervisor: Muneeba khan | Shift: Afternoon Shift (2pm – 10pm)\n\nRISK LEVEL: HIGH\n\nSHIFT STATUS:\nShift completed with 1 high-priority WMS alert(s) and 3 open IT ticket(s). Immediate attention required before starting operations.\n\n⚠️ CRITICAL ACTION ITEMS (complete before starting operations):\n1. Zone B conveyor belt running at 60% speed - maintenance notified\n2. Resolve HIGH ticket: [TKT-1042] Conveyor Belt B speed issue - Zone B\n3. Brief your team before beginning shift operations\n\n📦 WMS ALERTS:\n• [High] Zone B conveyor belt running at 60% speed - maintenance notified\n• [Medium] Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered\n• [Low] Label printer LP-03 requires paper refill\n\n🎫 OPEN IT TICKETS:\n• [TKT-1042] Conveyor Belt B speed issue - Zone B | Priority: High | Open\n• [TKT-1039] WMS login timeout - Shift supervisor terminals | Priority: Medium | In Progress\n• [TKT-1035] Label printer LP-03 intermittent paper jam | Priority: Low | Open\n\n🔧 EQUIPMENT NOTES:\n\n\n✅ RECOMMENDED HANDOVER STEPS:\n1. Review all HIGH priority items above with your shift team immediately\n2. Confirm WMS login access is working for all incoming staff\n3. Acknowledge this handover report to confirm receipt\n\n— AutoHandover AI System v2.0 | IST 440W Capstone | Penn State 2026",
+    "wmsSnapshot": {
+      "shift_date": "2026-06-27",
+      "facility": "Penn State Distribution Center - Warehouse A",
+      "wms_system": "Softeon WMS v8.2",
+      "active_orders": [
+        {
+          "order_id": "ORD-20240115",
+          "status": "Picking",
+          "priority": "High",
+          "customer": "Amazon FBA",
+          "items": 48,
+          "completion": 75
+        },
+        {
+          "order_id": "ORD-20240116",
+          "status": "Packing",
+          "priority": "Normal",
+          "customer": "Walmart B2B",
+          "items": 120,
+          "completion": 90
+        },
+        {
+          "order_id": "ORD-20240117",
+          "status": "Pending Pick",
+          "priority": "Rush",
+          "customer": "Target Express",
+          "items": 22,
+          "completion": 0
+        },
+        {
+          "order_id": "ORD-20240118",
+          "status": "Staged",
+          "priority": "Normal",
+          "customer": "Home Depot",
+          "items": 65,
+          "completion": 100
+        }
+      ],
+      "alerts": [
+        {
+          "id": "WMS-ALT-001",
+          "severity": "High",
+          "message": "Zone B conveyor belt running at 60% speed - maintenance notified",
+          "time": "14:32"
+        },
+        {
+          "id": "WMS-ALT-002",
+          "severity": "Medium",
+          "message": "Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered",
+          "time": "15:10"
+        },
+        {
+          "id": "WMS-ALT-003",
+          "severity": "Low",
+          "message": "Label printer LP-03 requires paper refill",
+          "time": "15:45"
+        }
+      ],
+      "metrics": {
+        "orders_completed_today": 34,
+        "orders_pending": 8,
+        "pick_accuracy": "98.2%",
+        "avg_pick_time_min": 4.7,
+        "dock_doors_active": 6,
+        "dock_doors_total": 10
+      },
+      "equipment": [
+        {
+          "id": "FL-01",
+          "type": "Forklift",
+          "status": "In Use",
+          "location": "Zone C"
+        },
+        {
+          "id": "FL-02",
+          "type": "Forklift",
+          "status": "Available",
+          "location": "Charging Bay"
+        },
+        {
+          "id": "PP-01",
+          "type": "Pallet Jack",
+          "status": "In Use",
+          "location": "Zone A"
+        },
+        {
+          "id": "CB-01",
+          "type": "Conveyor Belt A",
+          "status": "Running",
+          "location": "Main Line"
+        },
+        {
+          "id": "CB-02",
+          "type": "Conveyor Belt B",
+          "status": "Degraded",
+          "location": "Zone B"
+        }
+      ]
+    },
+    "ticketsSnapshot": [
+      {
+        "id": "TKT-1042",
+        "subject": "Conveyor Belt B speed issue - Zone B",
+        "status": "Open",
+        "priority": "High",
+        "created": "2026-06-27 14:30",
+        "assigned_to": "IT Support - John M.",
+        "department": "Facilities",
+        "description": "Zone B conveyor belt running at 60% capacity. Motor sensor showing fault code E-14. Maintenance team notified but parts needed.",
+        "last_update": "2026-06-27 15:00"
+      },
+      {
+        "id": "TKT-1039",
+        "subject": "WMS login timeout - Shift supervisor terminals",
+        "status": "In Progress",
+        "priority": "Medium",
+        "created": "2026-06-27 11:15",
+        "assigned_to": "IT Support - Muneeba K.",
+        "department": "IT",
+        "description": "Supervisor terminals timing out after 5 minutes instead of 30 minutes. Session config updated in Softeon admin panel - pending verification.",
+        "last_update": "2026-06-27 13:45"
+      },
+      {
+        "id": "TKT-1035",
+        "subject": "Label printer LP-03 intermittent paper jam",
+        "status": "Open",
+        "priority": "Low",
+        "created": "2026-06-26 16:00",
+        "assigned_to": "Unassigned",
+        "department": "Operations",
+        "description": "LP-03 jamming every 50-60 labels. Printer cleaned but issue persists. May need roller replacement.",
+        "last_update": "2026-06-26 16:00"
+      }
+    ],
+    "acknowledged": true,
+    "acknowledgedBy": "muneeba khan",
+    "acknowledgedAt": "2026-07-30T22:06:39.792Z"
+  },
+  {
+    "id": "4750db01-d881-4fa6-b7cb-3e20bcd4e13b",
+    "timestamp": "2026-07-30T21:16:34.687Z",
+    "supervisorName": "Muneeba Khan",
+    "shiftType": "Day Shift (6am – 2pm)",
+    "notes": "",
+    "openIssues": "",
+    "priority": "Normal",
+    "aiSummary": "AUTOHANDOVER SHIFT SUMMARY — Generated 7/30/2026, 5:16:34 PM\nOutgoing Supervisor: Muneeba Khan | Shift: Day Shift (6am – 2pm)\n\nRISK LEVEL: HIGH\n\nSHIFT STATUS:\nShift completed with 1 high-priority WMS alert(s) and 3 open IT ticket(s). Immediate attention required before starting operations.\n\n⚠️ CRITICAL ACTION ITEMS (complete before starting operations):\n1. Zone B conveyor belt running at 60% speed - maintenance notified\n2. Resolve HIGH ticket: [TKT-1042] Conveyor Belt B speed issue - Zone B\n3. Brief your team before beginning shift operations\n\n📦 WMS ALERTS:\n• [High] Zone B conveyor belt running at 60% speed - maintenance notified\n• [Medium] Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered\n• [Low] Label printer LP-03 requires paper refill\n\n🎫 OPEN IT TICKETS:\n• [TKT-1042] Conveyor Belt B speed issue - Zone B | Priority: High | Open\n• [TKT-1039] WMS login timeout - Shift supervisor terminals | Priority: Medium | In Progress\n• [TKT-1035] Label printer LP-03 intermittent paper jam | Priority: Low | Open\n\n🔧 EQUIPMENT NOTES:\n\n\n✅ RECOMMENDED HANDOVER STEPS:\n1. Review all HIGH priority items above with your shift team immediately\n2. Confirm WMS login access is working for all incoming staff\n3. Acknowledge this handover report to confirm receipt\n\n— AutoHandover AI System v2.0 | IST 440W Capstone | Penn State 2026",
+    "wmsSnapshot": {
+      "shift_date": "2026-06-27",
+      "facility": "Penn State Distribution Center - Warehouse A",
+      "wms_system": "Softeon WMS v8.2",
+      "active_orders": [
+        {
+          "order_id": "ORD-20240115",
+          "status": "Picking",
+          "priority": "High",
+          "customer": "Amazon FBA",
+          "items": 48,
+          "completion": 75
+        },
+        {
+          "order_id": "ORD-20240116",
+          "status": "Packing",
+          "priority": "Normal",
+          "customer": "Walmart B2B",
+          "items": 120,
+          "completion": 90
+        },
+        {
+          "order_id": "ORD-20240117",
+          "status": "Pending Pick",
+          "priority": "Rush",
+          "customer": "Target Express",
+          "items": 22,
+          "completion": 0
+        },
+        {
+          "order_id": "ORD-20240118",
+          "status": "Staged",
+          "priority": "Normal",
+          "customer": "Home Depot",
+          "items": 65,
+          "completion": 100
+        }
+      ],
+      "alerts": [
+        {
+          "id": "WMS-ALT-001",
+          "severity": "High",
+          "message": "Zone B conveyor belt running at 60% speed - maintenance notified",
+          "time": "14:32"
+        },
+        {
+          "id": "WMS-ALT-002",
+          "severity": "Medium",
+          "message": "Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered",
+          "time": "15:10"
+        },
+        {
+          "id": "WMS-ALT-003",
+          "severity": "Low",
+          "message": "Label printer LP-03 requires paper refill",
+          "time": "15:45"
+        }
+      ],
+      "metrics": {
+        "orders_completed_today": 34,
+        "orders_pending": 8,
+        "pick_accuracy": "98.2%",
+        "avg_pick_time_min": 4.7,
+        "dock_doors_active": 6,
+        "dock_doors_total": 10
+      },
+      "equipment": [
+        {
+          "id": "FL-01",
+          "type": "Forklift",
+          "status": "In Use",
+          "location": "Zone C"
+        },
+        {
+          "id": "FL-02",
+          "type": "Forklift",
+          "status": "Available",
+          "location": "Charging Bay"
+        },
+        {
+          "id": "PP-01",
+          "type": "Pallet Jack",
+          "status": "In Use",
+          "location": "Zone A"
+        },
+        {
+          "id": "CB-01",
+          "type": "Conveyor Belt A",
+          "status": "Running",
+          "location": "Main Line"
+        },
+        {
+          "id": "CB-02",
+          "type": "Conveyor Belt B",
+          "status": "Degraded",
+          "location": "Zone B"
+        }
+      ]
+    },
+    "ticketsSnapshot": [
+      {
+        "id": "TKT-1042",
+        "subject": "Conveyor Belt B speed issue - Zone B",
+        "status": "Open",
+        "priority": "High",
+        "created": "2026-06-27 14:30",
+        "assigned_to": "IT Support - John M.",
+        "department": "Facilities",
+        "description": "Zone B conveyor belt running at 60% capacity. Motor sensor showing fault code E-14. Maintenance team notified but parts needed.",
+        "last_update": "2026-06-27 15:00"
+      },
+      {
+        "id": "TKT-1039",
+        "subject": "WMS login timeout - Shift supervisor terminals",
+        "status": "In Progress",
+        "priority": "Medium",
+        "created": "2026-06-27 11:15",
+        "assigned_to": "IT Support - Muneeba K.",
+        "department": "IT",
+        "description": "Supervisor terminals timing out after 5 minutes instead of 30 minutes. Session config updated in Softeon admin panel - pending verification.",
+        "last_update": "2026-06-27 13:45"
+      },
+      {
+        "id": "TKT-1035",
+        "subject": "Label printer LP-03 intermittent paper jam",
+        "status": "Open",
+        "priority": "Low",
+        "created": "2026-06-26 16:00",
+        "assigned_to": "Unassigned",
+        "department": "Operations",
+        "description": "LP-03 jamming every 50-60 labels. Printer cleaned but issue persists. May need roller replacement.",
+        "last_update": "2026-06-26 16:00"
+      }
+    ]
+  },
+  {
+    "id": "701c8f21-e2cf-4a48-b51f-25f7e80b3a40",
+    "timestamp": "2026-07-26T17:41:13.817Z",
+    "supervisorName": "<script>alert('attack')</script>",
+    "shiftType": "Day Shift (6am – 2pm)",
+    "notes": "",
+    "openIssues": "",
+    "priority": "Normal",
+    "aiSummary": "AUTOHANDOVER SHIFT SUMMARY — Generated 7/26/2026, 1:41:13 PM\nOutgoing Supervisor: <script>alert('attack')</script> | Shift: Day Shift (6am – 2pm)\n\nRISK LEVEL: HIGH\n\nSHIFT STATUS:\nShift completed with 1 high-priority WMS alert(s) and 3 open IT ticket(s). Immediate attention required before starting operations.\n\n⚠️ CRITICAL ACTION ITEMS (complete before starting operations):\n1. Zone B conveyor belt running at 60% speed - maintenance notified\n2. Resolve HIGH ticket: [TKT-1042] Conveyor Belt B speed issue - Zone B\n3. Brief your team before beginning shift operations\n\n📦 WMS ALERTS:\n• [High] Zone B conveyor belt running at 60% speed - maintenance notified\n• [Medium] Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered\n• [Low] Label printer LP-03 requires paper refill\n\n🎫 OPEN IT TICKETS:\n• [TKT-1042] Conveyor Belt B speed issue - Zone B | Priority: High | Open\n• [TKT-1039] WMS login timeout - Shift supervisor terminals | Priority: Medium | In Progress\n• [TKT-1035] Label printer LP-03 intermittent paper jam | Priority: Low | Open\n\n🔧 EQUIPMENT NOTES:\n\n\n✅ RECOMMENDED HANDOVER STEPS:\n1. Review all HIGH priority items above with your shift team immediately\n2. Confirm WMS login access is working for all incoming staff\n3. Acknowledge this handover report to confirm receipt\n\n— AutoHandover AI System v2.0 | IST 440W Capstone | Penn State 2026",
+    "wmsSnapshot": {
+      "shift_date": "2026-06-27",
+      "facility": "Penn State Distribution Center - Warehouse A",
+      "wms_system": "Softeon WMS v8.2",
+      "active_orders": [
+        {
+          "order_id": "ORD-20240115",
+          "status": "Picking",
+          "priority": "High",
+          "customer": "Amazon FBA",
+          "items": 48,
+          "completion": 75
+        },
+        {
+          "order_id": "ORD-20240116",
+          "status": "Packing",
+          "priority": "Normal",
+          "customer": "Walmart B2B",
+          "items": 120,
+          "completion": 90
+        },
+        {
+          "order_id": "ORD-20240117",
+          "status": "Pending Pick",
+          "priority": "Rush",
+          "customer": "Target Express",
+          "items": 22,
+          "completion": 0
+        },
+        {
+          "order_id": "ORD-20240118",
+          "status": "Staged",
+          "priority": "Normal",
+          "customer": "Home Depot",
+          "items": 65,
+          "completion": 100
+        }
+      ],
+      "alerts": [
+        {
+          "id": "WMS-ALT-001",
+          "severity": "High",
+          "message": "Zone B conveyor belt running at 60% speed - maintenance notified",
+          "time": "14:32"
+        },
+        {
+          "id": "WMS-ALT-002",
+          "severity": "Medium",
+          "message": "Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered",
+          "time": "15:10"
+        },
+        {
+          "id": "WMS-ALT-003",
+          "severity": "Low",
+          "message": "Label printer LP-03 requires paper refill",
+          "time": "15:45"
+        }
+      ],
+      "metrics": {
+        "orders_completed_today": 34,
+        "orders_pending": 8,
+        "pick_accuracy": "98.2%",
+        "avg_pick_time_min": 4.7,
+        "dock_doors_active": 6,
+        "dock_doors_total": 10
+      },
+      "equipment": [
+        {
+          "id": "FL-01",
+          "type": "Forklift",
+          "status": "In Use",
+          "location": "Zone C"
+        },
+        {
+          "id": "FL-02",
+          "type": "Forklift",
+          "status": "Available",
+          "location": "Charging Bay"
+        },
+        {
+          "id": "PP-01",
+          "type": "Pallet Jack",
+          "status": "In Use",
+          "location": "Zone A"
+        },
+        {
+          "id": "CB-01",
+          "type": "Conveyor Belt A",
+          "status": "Running",
+          "location": "Main Line"
+        },
+        {
+          "id": "CB-02",
+          "type": "Conveyor Belt B",
+          "status": "Degraded",
+          "location": "Zone B"
+        }
+      ]
+    },
+    "ticketsSnapshot": [
+      {
+        "id": "TKT-1042",
+        "subject": "Conveyor Belt B speed issue - Zone B",
+        "status": "Open",
+        "priority": "High",
+        "created": "2026-06-27 14:30",
+        "assigned_to": "IT Support - John M.",
+        "department": "Facilities",
+        "description": "Zone B conveyor belt running at 60% capacity. Motor sensor showing fault code E-14. Maintenance team notified but parts needed.",
+        "last_update": "2026-06-27 15:00"
+      },
+      {
+        "id": "TKT-1039",
+        "subject": "WMS login timeout - Shift supervisor terminals",
+        "status": "In Progress",
+        "priority": "Medium",
+        "created": "2026-06-27 11:15",
+        "assigned_to": "IT Support - Muneeba K.",
+        "department": "IT",
+        "description": "Supervisor terminals timing out after 5 minutes instead of 30 minutes. Session config updated in Softeon admin panel - pending verification.",
+        "last_update": "2026-06-27 13:45"
+      },
+      {
+        "id": "TKT-1035",
+        "subject": "Label printer LP-03 intermittent paper jam",
+        "status": "Open",
+        "priority": "Low",
+        "created": "2026-06-26 16:00",
+        "assigned_to": "Unassigned",
+        "department": "Operations",
+        "description": "LP-03 jamming every 50-60 labels. Printer cleaned but issue persists. May need roller replacement.",
+        "last_update": "2026-06-26 16:00"
+      }
+    ]
+  },
+  {
+    "id": "0fe42d39-34ad-4915-904e-b8952de12427",
+    "timestamp": "2026-07-25T18:57:13.405Z",
+    "supervisorName": "<script>alert('attack')</script>",
+    "shiftType": "Day Shift (6am – 2pm)",
+    "notes": "",
+    "openIssues": "",
+    "priority": "Normal",
+    "aiSummary": "AUTOHANDOVER SHIFT SUMMARY — Generated 7/25/2026, 2:57:13 PM\nOutgoing Supervisor: <script>alert('attack')</script> | Shift: Day Shift (6am – 2pm)\n\nRISK LEVEL: HIGH\n\nSHIFT STATUS:\nShift completed with 1 high-priority WMS alert(s) and 3 open IT ticket(s). Immediate attention required before starting operations.\n\n⚠️ CRITICAL ACTION ITEMS (complete before starting operations):\n1. Zone B conveyor belt running at 60% speed - maintenance notified\n2. Resolve HIGH ticket: [TKT-1042] Conveyor Belt B speed issue - Zone B\n3. Brief your team before beginning shift operations\n\n📦 WMS ALERTS:\n• [High] Zone B conveyor belt running at 60% speed - maintenance notified\n• [Medium] Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered\n• [Low] Label printer LP-03 requires paper refill\n\n🎫 OPEN IT TICKETS:\n• [TKT-1042] Conveyor Belt B speed issue - Zone B | Priority: High | Open\n• [TKT-1039] WMS login timeout - Shift supervisor terminals | Priority: Medium | In Progress\n• [TKT-1035] Label printer LP-03 intermittent paper jam | Priority: Low | Open\n\n🔧 EQUIPMENT NOTES:\n\n\n✅ RECOMMENDED HANDOVER STEPS:\n1. Review all HIGH priority items above with your shift team immediately\n2. Confirm WMS login access is working for all incoming staff\n3. Acknowledge this handover report to confirm receipt\n\n— AutoHandover AI System v2.0 | IST 440W Capstone | Penn State 2026",
+    "wmsSnapshot": {
+      "shift_date": "2026-06-27",
+      "facility": "Penn State Distribution Center - Warehouse A",
+      "wms_system": "Softeon WMS v8.2",
+      "active_orders": [
+        {
+          "order_id": "ORD-20240115",
+          "status": "Picking",
+          "priority": "High",
+          "customer": "Amazon FBA",
+          "items": 48,
+          "completion": 75
+        },
+        {
+          "order_id": "ORD-20240116",
+          "status": "Packing",
+          "priority": "Normal",
+          "customer": "Walmart B2B",
+          "items": 120,
+          "completion": 90
+        },
+        {
+          "order_id": "ORD-20240117",
+          "status": "Pending Pick",
+          "priority": "Rush",
+          "customer": "Target Express",
+          "items": 22,
+          "completion": 0
+        },
+        {
+          "order_id": "ORD-20240118",
+          "status": "Staged",
+          "priority": "Normal",
+          "customer": "Home Depot",
+          "items": 65,
+          "completion": 100
+        }
+      ],
+      "alerts": [
+        {
+          "id": "WMS-ALT-001",
+          "severity": "High",
+          "message": "Zone B conveyor belt running at 60% speed - maintenance notified",
+          "time": "14:32"
+        },
+        {
+          "id": "WMS-ALT-002",
+          "severity": "Medium",
+          "message": "Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered",
+          "time": "15:10"
+        },
+        {
+          "id": "WMS-ALT-003",
+          "severity": "Low",
+          "message": "Label printer LP-03 requires paper refill",
+          "time": "15:45"
+        }
+      ],
+      "metrics": {
+        "orders_completed_today": 34,
+        "orders_pending": 8,
+        "pick_accuracy": "98.2%",
+        "avg_pick_time_min": 4.7,
+        "dock_doors_active": 6,
+        "dock_doors_total": 10
+      },
+      "equipment": [
+        {
+          "id": "FL-01",
+          "type": "Forklift",
+          "status": "In Use",
+          "location": "Zone C"
+        },
+        {
+          "id": "FL-02",
+          "type": "Forklift",
+          "status": "Available",
+          "location": "Charging Bay"
+        },
+        {
+          "id": "PP-01",
+          "type": "Pallet Jack",
+          "status": "In Use",
+          "location": "Zone A"
+        },
+        {
+          "id": "CB-01",
+          "type": "Conveyor Belt A",
+          "status": "Running",
+          "location": "Main Line"
+        },
+        {
+          "id": "CB-02",
+          "type": "Conveyor Belt B",
+          "status": "Degraded",
+          "location": "Zone B"
+        }
+      ]
+    },
+    "ticketsSnapshot": [
+      {
+        "id": "TKT-1042",
+        "subject": "Conveyor Belt B speed issue - Zone B",
+        "status": "Open",
+        "priority": "High",
+        "created": "2026-06-27 14:30",
+        "assigned_to": "IT Support - John M.",
+        "department": "Facilities",
+        "description": "Zone B conveyor belt running at 60% capacity. Motor sensor showing fault code E-14. Maintenance team notified but parts needed.",
+        "last_update": "2026-06-27 15:00"
+      },
+      {
+        "id": "TKT-1039",
+        "subject": "WMS login timeout - Shift supervisor terminals",
+        "status": "In Progress",
+        "priority": "Medium",
+        "created": "2026-06-27 11:15",
+        "assigned_to": "IT Support - Muneeba K.",
+        "department": "IT",
+        "description": "Supervisor terminals timing out after 5 minutes instead of 30 minutes. Session config updated in Softeon admin panel - pending verification.",
+        "last_update": "2026-06-27 13:45"
+      },
+      {
+        "id": "TKT-1035",
+        "subject": "Label printer LP-03 intermittent paper jam",
+        "status": "Open",
+        "priority": "Low",
+        "created": "2026-06-26 16:00",
+        "assigned_to": "Unassigned",
+        "department": "Operations",
+        "description": "LP-03 jamming every 50-60 labels. Printer cleaned but issue persists. May need roller replacement.",
+        "last_update": "2026-06-26 16:00"
+      }
+    ]
+  },
+  {
+    "id": "2a897dc8-6bcc-41b2-96df-9df7baa69085",
+    "timestamp": "2026-07-23T02:02:05.992Z",
+    "supervisorName": "<script>alert('attack')</script>",
+    "shiftType": "Day Shift (6am – 2pm)",
+    "notes": "",
+    "openIssues": "",
+    "priority": "Normal",
+    "aiSummary": "AUTOHANDOVER SHIFT SUMMARY — Generated 7/22/2026, 10:02:05 PM\nOutgoing Supervisor: <script>alert('attack')</script> | Shift: Day Shift (6am – 2pm)\n\nRISK LEVEL: HIGH\n\nSHIFT STATUS:\nShift completed with 1 high-priority WMS alert(s) and 3 open IT ticket(s). Immediate attention required before starting operations.\n\n⚠️ CRITICAL ACTION ITEMS (complete before starting operations):\n1. Zone B conveyor belt running at 60% speed - maintenance notified\n2. Resolve HIGH ticket: [TKT-1042] Conveyor Belt B speed issue - Zone B\n3. Brief your team before beginning shift operations\n\n📦 WMS ALERTS:\n• [High] Zone B conveyor belt running at 60% speed - maintenance notified\n• [Medium] Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered\n• [Low] Label printer LP-03 requires paper refill\n\n🎫 OPEN IT TICKETS:\n• [TKT-1042] Conveyor Belt B speed issue - Zone B | Priority: High | Open\n• [TKT-1039] WMS login timeout - Shift supervisor terminals | Priority: Medium | In Progress\n• [TKT-1035] Label printer LP-03 intermittent paper jam | Priority: Low | Open\n\n🔧 EQUIPMENT NOTES:\n\n\n✅ RECOMMENDED HANDOVER STEPS:\n1. Review all HIGH priority items above with your shift team immediately\n2. Confirm WMS login access is working for all incoming staff\n3. Acknowledge this handover report to confirm receipt\n\n— AutoHandover AI System v2.0 | IST 440W Capstone | Penn State 2026",
+    "wmsSnapshot": {
+      "shift_date": "2026-06-27",
+      "facility": "Penn State Distribution Center - Warehouse A",
+      "wms_system": "Softeon WMS v8.2",
+      "active_orders": [
+        {
+          "order_id": "ORD-20240115",
+          "status": "Picking",
+          "priority": "High",
+          "customer": "Amazon FBA",
+          "items": 48,
+          "completion": 75
+        },
+        {
+          "order_id": "ORD-20240116",
+          "status": "Packing",
+          "priority": "Normal",
+          "customer": "Walmart B2B",
+          "items": 120,
+          "completion": 90
+        },
+        {
+          "order_id": "ORD-20240117",
+          "status": "Pending Pick",
+          "priority": "Rush",
+          "customer": "Target Express",
+          "items": 22,
+          "completion": 0
+        },
+        {
+          "order_id": "ORD-20240118",
+          "status": "Staged",
+          "priority": "Normal",
+          "customer": "Home Depot",
+          "items": 65,
+          "completion": 100
+        }
+      ],
+      "alerts": [
+        {
+          "id": "WMS-ALT-001",
+          "severity": "High",
+          "message": "Zone B conveyor belt running at 60% speed - maintenance notified",
+          "time": "14:32"
+        },
+        {
+          "id": "WMS-ALT-002",
+          "severity": "Medium",
+          "message": "Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered",
+          "time": "15:10"
+        },
+        {
+          "id": "WMS-ALT-003",
+          "severity": "Low",
+          "message": "Label printer LP-03 requires paper refill",
+          "time": "15:45"
+        }
+      ],
+      "metrics": {
+        "orders_completed_today": 34,
+        "orders_pending": 8,
+        "pick_accuracy": "98.2%",
+        "avg_pick_time_min": 4.7,
+        "dock_doors_active": 6,
+        "dock_doors_total": 10
+      },
+      "equipment": [
+        {
+          "id": "FL-01",
+          "type": "Forklift",
+          "status": "In Use",
+          "location": "Zone C"
+        },
+        {
+          "id": "FL-02",
+          "type": "Forklift",
+          "status": "Available",
+          "location": "Charging Bay"
+        },
+        {
+          "id": "PP-01",
+          "type": "Pallet Jack",
+          "status": "In Use",
+          "location": "Zone A"
+        },
+        {
+          "id": "CB-01",
+          "type": "Conveyor Belt A",
+          "status": "Running",
+          "location": "Main Line"
+        },
+        {
+          "id": "CB-02",
+          "type": "Conveyor Belt B",
+          "status": "Degraded",
+          "location": "Zone B"
+        }
+      ]
+    },
+    "ticketsSnapshot": [
+      {
+        "id": "TKT-1042",
+        "subject": "Conveyor Belt B speed issue - Zone B",
+        "status": "Open",
+        "priority": "High",
+        "created": "2026-06-27 14:30",
+        "assigned_to": "IT Support - John M.",
+        "department": "Facilities",
+        "description": "Zone B conveyor belt running at 60% capacity. Motor sensor showing fault code E-14. Maintenance team notified but parts needed.",
+        "last_update": "2026-06-27 15:00"
+      },
+      {
+        "id": "TKT-1039",
+        "subject": "WMS login timeout - Shift supervisor terminals",
+        "status": "In Progress",
+        "priority": "Medium",
+        "created": "2026-06-27 11:15",
+        "assigned_to": "IT Support - Muneeba K.",
+        "department": "IT",
+        "description": "Supervisor terminals timing out after 5 minutes instead of 30 minutes. Session config updated in Softeon admin panel - pending verification.",
+        "last_update": "2026-06-27 13:45"
+      },
+      {
+        "id": "TKT-1035",
+        "subject": "Label printer LP-03 intermittent paper jam",
+        "status": "Open",
+        "priority": "Low",
+        "created": "2026-06-26 16:00",
+        "assigned_to": "Unassigned",
+        "department": "Operations",
+        "description": "LP-03 jamming every 50-60 labels. Printer cleaned but issue persists. May need roller replacement.",
+        "last_update": "2026-06-26 16:00"
+      }
+    ]
+  },
+  {
+    "id": "ea4b17f0-2b91-46ae-905b-4d4c038702e7",
+    "timestamp": "2026-07-23T02:00:59.966Z",
+    "supervisorName": "Muneeba Khan",
+    "shiftType": "Day Shift (6am – 2pm)",
+    "notes": "",
+    "openIssues": "",
+    "priority": "Normal",
+    "aiSummary": "AUTOHANDOVER SHIFT SUMMARY — Generated 7/22/2026, 10:00:59 PM\nOutgoing Supervisor: Muneeba Khan | Shift: Day Shift (6am – 2pm)\n\nRISK LEVEL: HIGH\n\nSHIFT STATUS:\nShift completed with 1 high-priority WMS alert(s) and 3 open IT ticket(s). Immediate attention required before starting operations.\n\n⚠️ CRITICAL ACTION ITEMS (complete before starting operations):\n1. Zone B conveyor belt running at 60% speed - maintenance notified\n2. Resolve HIGH ticket: [TKT-1042] Conveyor Belt B speed issue - Zone B\n3. Brief your team before beginning shift operations\n\n📦 WMS ALERTS:\n• [High] Zone B conveyor belt running at 60% speed - maintenance notified\n• [Medium] Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered\n• [Low] Label printer LP-03 requires paper refill\n\n🎫 OPEN IT TICKETS:\n• [TKT-1042] Conveyor Belt B speed issue - Zone B | Priority: High | Open\n• [TKT-1039] WMS login timeout - Shift supervisor terminals | Priority: Medium | In Progress\n• [TKT-1035] Label printer LP-03 intermittent paper jam | Priority: Low | Open\n\n🔧 EQUIPMENT NOTES:\n\n\n✅ RECOMMENDED HANDOVER STEPS:\n1. Review all HIGH priority items above with your shift team immediately\n2. Confirm WMS login access is working for all incoming staff\n3. Acknowledge this handover report to confirm receipt\n\n— AutoHandover AI System v2.0 | IST 440W Capstone | Penn State 2026",
+    "wmsSnapshot": {
+      "shift_date": "2026-06-27",
+      "facility": "Penn State Distribution Center - Warehouse A",
+      "wms_system": "Softeon WMS v8.2",
+      "active_orders": [
+        {
+          "order_id": "ORD-20240115",
+          "status": "Picking",
+          "priority": "High",
+          "customer": "Amazon FBA",
+          "items": 48,
+          "completion": 75
+        },
+        {
+          "order_id": "ORD-20240116",
+          "status": "Packing",
+          "priority": "Normal",
+          "customer": "Walmart B2B",
+          "items": 120,
+          "completion": 90
+        },
+        {
+          "order_id": "ORD-20240117",
+          "status": "Pending Pick",
+          "priority": "Rush",
+          "customer": "Target Express",
+          "items": 22,
+          "completion": 0
+        },
+        {
+          "order_id": "ORD-20240118",
+          "status": "Staged",
+          "priority": "Normal",
+          "customer": "Home Depot",
+          "items": 65,
+          "completion": 100
+        }
+      ],
+      "alerts": [
+        {
+          "id": "WMS-ALT-001",
+          "severity": "High",
+          "message": "Zone B conveyor belt running at 60% speed - maintenance notified",
+          "time": "14:32"
+        },
+        {
+          "id": "WMS-ALT-002",
+          "severity": "Medium",
+          "message": "Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered",
+          "time": "15:10"
+        },
+        {
+          "id": "WMS-ALT-003",
+          "severity": "Low",
+          "message": "Label printer LP-03 requires paper refill",
+          "time": "15:45"
+        }
+      ],
+      "metrics": {
+        "orders_completed_today": 34,
+        "orders_pending": 8,
+        "pick_accuracy": "98.2%",
+        "avg_pick_time_min": 4.7,
+        "dock_doors_active": 6,
+        "dock_doors_total": 10
+      },
+      "equipment": [
+        {
+          "id": "FL-01",
+          "type": "Forklift",
+          "status": "In Use",
+          "location": "Zone C"
+        },
+        {
+          "id": "FL-02",
+          "type": "Forklift",
+          "status": "Available",
+          "location": "Charging Bay"
+        },
+        {
+          "id": "PP-01",
+          "type": "Pallet Jack",
+          "status": "In Use",
+          "location": "Zone A"
+        },
+        {
+          "id": "CB-01",
+          "type": "Conveyor Belt A",
+          "status": "Running",
+          "location": "Main Line"
+        },
+        {
+          "id": "CB-02",
+          "type": "Conveyor Belt B",
+          "status": "Degraded",
+          "location": "Zone B"
+        }
+      ]
+    },
+    "ticketsSnapshot": [
+      {
+        "id": "TKT-1042",
+        "subject": "Conveyor Belt B speed issue - Zone B",
+        "status": "Open",
+        "priority": "High",
+        "created": "2026-06-27 14:30",
+        "assigned_to": "IT Support - John M.",
+        "department": "Facilities",
+        "description": "Zone B conveyor belt running at 60% capacity. Motor sensor showing fault code E-14. Maintenance team notified but parts needed.",
+        "last_update": "2026-06-27 15:00"
+      },
+      {
+        "id": "TKT-1039",
+        "subject": "WMS login timeout - Shift supervisor terminals",
+        "status": "In Progress",
+        "priority": "Medium",
+        "created": "2026-06-27 11:15",
+        "assigned_to": "IT Support - Muneeba K.",
+        "department": "IT",
+        "description": "Supervisor terminals timing out after 5 minutes instead of 30 minutes. Session config updated in Softeon admin panel - pending verification.",
+        "last_update": "2026-06-27 13:45"
+      },
+      {
+        "id": "TKT-1035",
+        "subject": "Label printer LP-03 intermittent paper jam",
+        "status": "Open",
+        "priority": "Low",
+        "created": "2026-06-26 16:00",
+        "assigned_to": "Unassigned",
+        "department": "Operations",
+        "description": "LP-03 jamming every 50-60 labels. Printer cleaned but issue persists. May need roller replacement.",
+        "last_update": "2026-06-26 16:00"
+      }
+    ]
+  },
+  {
+    "id": "a436b74f-dede-4cc2-9c06-626ede4670cd",
+    "timestamp": "2026-07-01T23:37:55.650Z",
+    "supervisorName": "Muneeba Khan",
+    "shiftType": "Afternoon Shift (2pm – 10pm)",
+    "notes": "All warehouse zones operational. Zone B conveyor belt running at reduced speed, maintenance team has been notified. Inventory reorder triggered for SKU-4421. Label printer LP-03 needs paper refill before next shift begins.",
+    "openIssues": "",
+    "priority": "Normal",
+    "aiSummary": "AUTOHANDOVER SHIFT SUMMARY — Generated 7/1/2026, 7:37:55 PM\nOutgoing Supervisor: Muneeba Khan | Shift: Afternoon Shift (2pm – 10pm)\n\nRISK LEVEL: HIGH\n\nSHIFT STATUS:\nShift completed with 1 high-priority WMS alert(s) and 3 open IT ticket(s). Immediate attention required before starting operations.\n\n⚠️ CRITICAL ACTION ITEMS (complete before starting operations):\n1. Zone B conveyor belt running at 60% speed - maintenance notified\n2. Resolve HIGH ticket: [TKT-1042] Conveyor Belt B speed issue - Zone B\n3. Supervisor Note: All warehouse zones operational. Zone B conveyor belt running at reduced speed, \n\n📦 WMS ALERTS:\n• [High] Zone B conveyor belt running at 60% speed - maintenance notified\n• [Medium] Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered\n• [Low] Label printer LP-03 requires paper refill\n\n🎫 OPEN IT TICKETS:\n• [TKT-1042] Conveyor Belt B speed issue - Zone B | Priority: High | Open\n• [TKT-1039] WMS login timeout - Shift supervisor terminals | Priority: Medium | In Progress\n• [TKT-1035] Label printer LP-03 intermittent paper jam | Priority: Low | Open\n\n🔧 EQUIPMENT NOTES:\n\n\n✅ RECOMMENDED HANDOVER STEPS:\n1. Review all HIGH priority items above with your shift team immediately\n2. Confirm WMS login access is working for all incoming staff\n3. Acknowledge this handover report to confirm receipt\n\n— AutoHandover AI System v2.0 | IST 440W Capstone | Penn State 2026",
+    "wmsSnapshot": {
+      "shift_date": "2026-06-27",
+      "facility": "Penn State Distribution Center - Warehouse A",
+      "wms_system": "Softeon WMS v8.2",
+      "active_orders": [
+        {
+          "order_id": "ORD-20240115",
+          "status": "Picking",
+          "priority": "High",
+          "customer": "Amazon FBA",
+          "items": 48,
+          "completion": 75
+        },
+        {
+          "order_id": "ORD-20240116",
+          "status": "Packing",
+          "priority": "Normal",
+          "customer": "Walmart B2B",
+          "items": 120,
+          "completion": 90
+        },
+        {
+          "order_id": "ORD-20240117",
+          "status": "Pending Pick",
+          "priority": "Rush",
+          "customer": "Target Express",
+          "items": 22,
+          "completion": 0
+        },
+        {
+          "order_id": "ORD-20240118",
+          "status": "Staged",
+          "priority": "Normal",
+          "customer": "Home Depot",
+          "items": 65,
+          "completion": 100
+        }
+      ],
+      "alerts": [
+        {
+          "id": "WMS-ALT-001",
+          "severity": "High",
+          "message": "Zone B conveyor belt running at 60% speed - maintenance notified",
+          "time": "14:32"
+        },
+        {
+          "id": "WMS-ALT-002",
+          "severity": "Medium",
+          "message": "Low inventory: SKU-4421 (Bubble Wrap Large) - reorder triggered",
+          "time": "15:10"
+        },
+        {
+          "id": "WMS-ALT-003",
+          "severity": "Low",
+          "message": "Label printer LP-03 requires paper refill",
+          "time": "15:45"
+        }
+      ],
+      "metrics": {
+        "orders_completed_today": 34,
+        "orders_pending": 8,
+        "pick_accuracy": "98.2%",
+        "avg_pick_time_min": 4.7,
+        "dock_doors_active": 6,
+        "dock_doors_total": 10
+      },
+      "equipment": [
+        {
+          "id": "FL-01",
+          "type": "Forklift",
+          "status": "In Use",
+          "location": "Zone C"
+        },
+        {
+          "id": "FL-02",
+          "type": "Forklift",
+          "status": "Available",
+          "location": "Charging Bay"
+        },
+        {
+          "id": "PP-01",
+          "type": "Pallet Jack",
+          "status": "In Use",
+          "location": "Zone A"
+        },
+        {
+          "id": "CB-01",
+          "type": "Conveyor Belt A",
+          "status": "Running",
+          "location": "Main Line"
+        },
+        {
+          "id": "CB-02",
+          "type": "Conveyor Belt B",
+          "status": "Degraded",
+          "location": "Zone B"
+        }
+      ]
+    },
+    "ticketsSnapshot": [
+      {
+        "id": "TKT-1042",
+        "subject": "Conveyor Belt B speed issue - Zone B",
+        "status": "Open",
+        "priority": "High",
+        "created": "2026-06-27 14:30",
+        "assigned_to": "IT Support - John M.",
+        "department": "Facilities",
+        "description": "Zone B conveyor belt running at 60% capacity. Motor sensor showing fault code E-14. Maintenance team notified but parts needed.",
+        "last_update": "2026-06-27 15:00"
+      },
+      {
+        "id": "TKT-1039",
+        "subject": "WMS login timeout - Shift supervisor terminals",
+        "status": "In Progress",
+        "priority": "Medium",
+        "created": "2026-06-27 11:15",
+        "assigned_to": "IT Support - Muneeba K.",
+        "department": "IT",
+        "description": "Supervisor terminals timing out after 5 minutes instead of 30 minutes. Session config updated in Softeon admin panel - pending verification.",
+        "last_update": "2026-06-27 13:45"
+      },
+      {
+        "id": "TKT-1035",
+        "subject": "Label printer LP-03 intermittent paper jam",
+        "status": "Open",
+        "priority": "Low",
+        "created": "2026-06-26 16:00",
+        "assigned_to": "Unassigned",
+        "department": "Operations",
+        "description": "LP-03 jamming every 50-60 labels. Printer cleaned but issue persists. May need roller replacement.",
+        "last_update": "2026-06-26 16:00"
+      }
+    ],
+    "acknowledged": true,
+    "acknowledgedBy": "muneeba khan",
+    "acknowledgedAt": "2026-07-12T18:27:49.945Z"
+  }
+]

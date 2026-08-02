@@ -1,11 +1,27 @@
-# AutoHandover 🏭
+# AutoHandover v2.0 🏭
 
 **AI-Powered Shift Handover System for Warehouse Management**
 
-> IST 440W Capstone Project — Muneeba Khan — Penn State University — 2026  
+> **IST 440W Capstone Project — Final Submission**  
+> Muneeba Khan | Penn State University | Summer 2026  
 > GitHub: https://github.com/Muneebabibi1/autohandover
 
-AutoHandover eliminates manual shift handovers by automatically combining WMS operational data, IT support tickets, and AI to generate structured, accurate handover reports in seconds.
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen)](https://github.com/Muneebabibi1/autohandover)
+[![Node.js](https://img.shields.io/badge/Node.js-v18%2B-green)](https://nodejs.org)
+[![IST 440W](https://img.shields.io/badge/Penn%20State-IST%20440W-1F3864)](https://ist.psu.edu)
+
+AutoHandover eliminates informal verbal shift handovers in warehouse environments by combining live WMS data, IT support tickets, and AI to generate structured, risk-classified handover reports in seconds. Built with **zero npm dependencies** — runs entirely on Node.js built-in modules.
+
+
+---
+
+## ✨ v2.0 Enhancements
+
+| # | Enhancement | Type | Description |
+|---|-------------|------|-------------|
+| 1 | **Structured AI Summary + RISK LEVEL** | 🟠 Modified | AI output reformatted into sections with HIGH/MEDIUM/LOW classification |
+| 2 | **Real-Time History Search & Filter** | 🔴 New | Live supervisor-name search + shift type + status dropdowns on history page |
+| 3 | **Live Dashboard Stats** | 🔴 New | Home page stat cards fetch live data via `/api/dashboard` (Promise.all) |
 
 ---
 
@@ -102,4 +118,20 @@ autohandover/
 
 ---
 
-**Penn State University — IST 440W — Summer 2026**
+---
+
+## 🧪 Testing
+
+5 deliberate crash tests were performed — all passed:
+
+| Test | Category | Result |
+|------|----------|--------|
+| Empty input form submission | Logical | ✅ PASS — client-side validation blocks submission |
+| OpenAI API failure / no key | Logical | ✅ PASS — offline fallback generates structured report |
+| XSS injection attempt | Security | ✅ PASS — `.textContent` prevents script execution |
+| Invalid URL / directory traversal | Security | ✅ PASS — 404 returned, no file system leak |
+| Missing handovers.json | Data | ✅ PASS — app auto-creates file on first POST |
+
+---
+
+**Penn State University — IST 440W — Summer 2026 — Final Submission**
